@@ -1,5 +1,7 @@
-<img src ="https://material.adlinktech.com/en/Upload/ProductNews/logo_sema.png" width="300" align="right" />
+<img src ="https://material.adlinktech.com/en/Upload/ProductNews/logo_sema.png" width="240" align="right" />
 
+
+<br>
 
 ## Smart Embedded Management Agent ##
 ### SEMA 3.5 R9 offers a broad spectrum of enhanced functionality to improve system reliability and ease system integration.###
