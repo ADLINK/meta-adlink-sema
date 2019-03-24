@@ -1,4 +1,4 @@
-<div style="text-align:right"><img src ="https://material.adlinktech.com/en/Upload/ProductNews/logo_sema.png" width="300" /></div>
+<img src ="https://material.adlinktech.com/en/Upload/ProductNews/logo_sema.png" width="300" align="right" />
 
 
 ## Smart Embedded Management Agent ##
