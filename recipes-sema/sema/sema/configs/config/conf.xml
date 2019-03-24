@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Server>
+	<id>ADLINK_SEMA3.0.0</id>
+	<security>
+		<!--- true for SSL , false for non-SSL connection -->
+		<SSL>true</SSL>
+		<!--- the files must be located at the same folder as EAPI_Server -->
+		<certificate>server.crt</certificate>
+		<privatekey>server.key</privatekey>
+		<dhfile>dh512.pem</dhfile>
+		<passwd>202CB962AC59075B964B07152D234B70</passwd>
+	</security>
+  	<ipversion>IPV4</ipversion>
+	<port>9999</port>
+	<maxconnection>10</maxconnection>
+	<logsize>4096</logsize>	
+	<loglevel>warning</loglevel>	
+</Server>
