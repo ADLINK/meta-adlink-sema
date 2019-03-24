@@ -1,4 +1,4 @@
-<img src ="https://material.adlinktech.com/en/Upload/ProductNews/logo_sema.png" width="240" align="right" />
+<img src ="https://material.adlinktech.com/en/Upload/ProductNews/logo_sema.png" width="200" align="right" />
 
 
 <br>
