@@ -4,7 +4,7 @@
 <br>
 
 ## Smart Embedded Management Agent ##
-### SEMA 3.5 R9 offers a broad spectrum of enhanced functionality to improve system reliability and ease system integration.###
+### SEMA 3.5 R9 offers a broad spectrum of enhanced functionality to improve system reliability and ease system integration
 
 
 At the heart of SEMA is the Board Management Controller (BMC) supporting SEMA functions. The SEMA Extended EAPI provides access to all functions and can be integrated into the user’s own applications. The SEMA GUI and SEMA Command Line Interface allow monitoring, control and use of the SEMA parameters and functions directly on your device for test and demonstration purposes. 
