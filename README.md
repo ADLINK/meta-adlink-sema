@@ -51,7 +51,7 @@ If need more details about SEMA 3.5.9, please refer the following link: <a href=
 
 #### Guideline to add meta-adlink-seam into your BSP:  ####
 **1) Fetch the source from various git location:**
->git clone http://github.com/ADLINKTech/meta-sema
+>git clone http://github.com/ADLINK/meta-adlink-sema
 
 <br>**2) Add the following script into your Yocto configuration:**
 
