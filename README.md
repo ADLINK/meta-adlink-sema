@@ -54,6 +54,7 @@ Guideline to add layer into your BSP:
 
 **1. Fetch the source from various git location:**
 
+     git clone git://git.yoctoproject.org/poky.git -b sumo
   git clone https://github.com/adlink/meta-adlink-sema
 
 <br>
