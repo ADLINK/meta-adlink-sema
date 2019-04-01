@@ -46,28 +46,26 @@ If need more details about SEMA 3.5.9, please refer the following link: <a href=
  
 
 <br>
-<br>
 
 
 Guideline to add layer into your BSP: 
 ----
 
-**1. Fetch the source from various git location:**
+**1. Fetch the source from the following git location:**
 
-     git clone https://github.com/adlink/meta-adlink-sema
-  
-<br>
+	git clone https://github.com/adlink/meta-adlink-sema
+
 
 **2. Add the following script into your Yocto configuration:**
 
-&nbsp;&nbsp;2.1) Add "meta-adlink-sema" layer into bblayers.conf file.
+&nbsp;&nbsp;2.1 Add "meta-adlink-sema" layer into bblayers.conf file.
 
-&nbsp;&nbsp;2.2) Add SEMA application into local.conf file:
+&nbsp;&nbsp;2.2 Add SEMA application into local.conf file:
 
->IMAGE_INSTALL_append = " sema semagui-desktop libstdc++ trolltech"
+	IMAGE_INSTALL_append = " sema semagui-desktop libstdc++ trolltech"
 
 
-&nbsp;&nbsp;**Note**: <br> Support Linux kernel version >= 3.2.x for 32/64 bit <br> current support platform: x86_32bit/x86_64bit/arm_32bit
+&nbsp;&nbsp;**Note**: <br>&nbsp;&nbsp;&nbsp;&nbsp;-  Linux kernel  >= 3.2.x (32 bit & 64 bit) <br>&nbsp;&nbsp;&nbsp;&nbsp;-  support platform: x86 32bit & 64bit, ARM 32bit
 
 
 
