@@ -56,11 +56,11 @@ Guideline to add layer into your BSP:
 	git clone https://github.com/adlink/meta-adlink-sema
 
 
-**2. add the following script into your Yocto configuration:**
+**2. add the following script into your configuration:**
 
 &nbsp;&nbsp;2.1 add "meta-adlink-sema" layer into bblayers.conf file.
 
-&nbsp;&nbsp;2.2 add SEMA application into local.conf file:
+&nbsp;&nbsp;2.2 add application & library into local.conf file:
 
 	IMAGE_INSTALL_append = " sema semagui-desktop libstdc++ trolltech"
 
@@ -71,4 +71,4 @@ Guideline to add layer into your BSP:
 
 <br>
 <br>
-**Please feel free to send us (email: ryanzj.huang@adlinktech.com) patches for this layer and report bugs of this layer. <br>For hardware support, please contact your local representative.**
+Please feel free to send us (email: ryanzj.huang@adlinktech.com) patches for this layer and report bugs of this layer. <br>For hardware support, please contact your local representative.
