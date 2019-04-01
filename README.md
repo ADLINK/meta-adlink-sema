@@ -49,8 +49,11 @@ If need more details about SEMA 3.5.9, please refer the following link: <a href=
 <br>
 
 
-#### Guideline to add meta-adlink-seam into your BSP:  ####
+Guideline to add layer into your BSP: 
+----
+
 **1. Fetch the source from various git location:**
+
 &nbsp;&nbsp;>git clone https://github.com/adlink/meta-adlink-sema
 
 <br>
