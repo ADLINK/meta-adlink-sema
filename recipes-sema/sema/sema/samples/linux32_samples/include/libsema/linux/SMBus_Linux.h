@@ -1,7 +1,8 @@
 #include <unistd.h>
-#ifndef VXWORKS
+#if !defined(VXWORKS) && !defined(ARM)
 #include <sys/io.h>
 #endif
+
 #ifndef __SMBUS_LINUX_H__
 #define __SMBUS_LINUX_H__
 #include "../Globals.h"

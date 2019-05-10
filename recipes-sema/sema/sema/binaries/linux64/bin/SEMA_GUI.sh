@@ -1,5 +1,6 @@
 #!/bin/sh
-export PATH=$(pwd)/../semagui:$PATH
-export LD_LIBRARY_PATH=$(pwd)/../semagui
-chmod 755 /usr/local/SEMA/bin/../semagui/SEMAGUI 
-/usr/local/SEMA/bin/../semagui/SEMAGUI > /dev/null 2>&1
+export PATH=/usr/local/SEMA/semagui:$PATH
+export LD_LIBRARY_PATH=/usr/local/SEMA/lib:/usr/local/SEMA/semagui
+export QT_X11_NO_MITSHM=1
+chmod 755 /usr/local/SEMA/semagui/SEMAGUI
+/usr/local/SEMA/semagui/SEMAGUI > /dev/null 2>&1

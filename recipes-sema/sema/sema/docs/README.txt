@@ -1,5 +1,5 @@
 
-SEMA 3.5 R9, Release Feb/ 2018    
+SEMA 3.6 R0, Release Apr/ 2019
 ===============================
 
 A. History
@@ -12,6 +12,7 @@ A. History
 2016-12-08: (at) Added 3.5 R7 changes
 2017-06-15: (at) Added 3.5 R8 changes
 2018-02-02: (at) Added 3.5 R9 changes
+2019-04-15: (at) Added 3.6 R0 changes
 ----------
 
 B. Introduction
@@ -75,14 +76,17 @@ Intel:
 	.Intel(R) Apollolake Family
 	.Intel(R) Cannon Lake and Coffee Lake Family
 	.Intel(R) Denverton Product Family (Cormorant Lake)
+	.Intel(R) Whiskey Lake Family
 
 AMD:
 	.AMD(R) LX800 Family (Geode)
 	.AMD(R) G-Series Family (Fusion)
 	.AMD(R) BaldEagle Family
+	.AMD(R) Ryzen Family (Zen)
 
 ARM:
-	Freescale i.MX6
+	.Freescale i.MX6
+	.NXP i.MX8M
 ----------------------------
 
 F. Installing the Binary Applications

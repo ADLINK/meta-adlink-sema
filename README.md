@@ -4,7 +4,7 @@
 <br>
 
 ## Smart Embedded Management Agent ##
-### SEMA 3.5 R9 offers a broad spectrum of enhanced functionality to improve system reliability and ease system integration
+### SEMA 3.6 R0 offers a broad spectrum of enhanced functionality to improve system reliability and ease system integration
 
 
 At the heart of SEMA is the Board Management Controller (BMC) supporting SEMA functions. The SEMA Extended EAPI provides access to all functions and can be integrated into the user’s own applications. The SEMA GUI and SEMA Command Line Interface allow monitoring, control and use of the SEMA parameters and functions directly on your device for test and demonstration purposes. 
@@ -40,7 +40,7 @@ At the heart of SEMA is the Board Management Controller (BMC) supporting SEMA fu
 |<div style="text-align:right"><img src ="https://material.adlinktech.com/products/images/1274/SEMA_Graphics_Interface.png" width="300" /></div>|<div style="text-align:right"><img src ="https://material.adlinktech.com/products/images/1274/SEMA_Command_Interface.png" width="300" /></div>|
  
 
-If need more details about SEMA 3.5.9, please refer the following link: <a href="https://www.adlinktech.com/Products/Industrial_IoT_and_Cloud_solutions/SEMA_Smart_Embedded_Management_Agent/SEMA?lang=en" title="Title">click me!</a>  
+If need more details about SEMA 3.6.0, please refer the following link: <a href="https://www.adlinktech.com/Products/Industrial_IoT_and_Cloud_solutions/SEMA_Smart_Embedded_Management_Agent/SEMA?lang=en" title="Title">click me!</a>  
 
 
  
@@ -65,7 +65,7 @@ Guideline to add layer into your BSP:
 	IMAGE_INSTALL_append = " sema semagui-desktop libstdc++ trolltech"
 
 
-&nbsp;&nbsp;**Note**: <br>&nbsp;&nbsp;&nbsp;&nbsp;-  Linux kernel  >= 3.2.x (32 bit & 64 bit) <br>&nbsp;&nbsp;&nbsp;&nbsp;-  support platform: x86 32bit & 64bit, ARM 32bit
+&nbsp;&nbsp;**Note**: <br>&nbsp;&nbsp;&nbsp;&nbsp;-  Linux kernel  >= 3.2.x (32 bit & 64 bit) <br>&nbsp;&nbsp;&nbsp;&nbsp;-  support platform: x86 32bit & 64bit, ARM 32bit & 64bit
 
 
 
