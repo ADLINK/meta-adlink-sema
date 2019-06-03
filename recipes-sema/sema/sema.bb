@@ -79,7 +79,7 @@ do_install() {
 		install -m 0755 ${WORKDIR}/binaries/linux32/lib/libsema.so.3.6 ${D}${base_libdir}/libsema.so.3
 	fi
 
-	if ${@bb.utils.contains('${TARGET_ARCH}', 'arm', 'true', 'false', d)}; then # ARM x32
+	if ${@bb.utils.contains('TARGET_ARCH', 'arm', 'true', 'false', d)}; then # ARM x32
 		cp -a ${WORKDIR}/binaries/arm32/bin ${D}/usr/local/SEMA
 		cp -a ${WORKDIR}/binaries/arm32/lib ${D}/usr/local/SEMA
 		cp -a ${WORKDIR}/binaries/arm32/semagui ${D}/usr/local/SEMA
