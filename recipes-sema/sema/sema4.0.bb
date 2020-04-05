@@ -38,7 +38,7 @@ do_install_append() {
 }
 
 
-FILES_${PN} += " ${D}/lib64 /usr${base_bindir}/semautil /usr${base_libdir}/*.so"
+FILES_${PN} += " /lib64 /usr${base_bindir}/semautil /usr${base_libdir}/*.so"
 FILES_SOLIBSDEV = ""
 do_package_qa() {
 }
