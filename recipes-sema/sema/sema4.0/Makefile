@@ -29,3 +29,5 @@ semautil: $(APP_OBJS)
 
 %.o: %.c
 	gcc -Wall -I lib -g -fPIC -c $^ -o $@
+clean:
+	rm -rf *.o *.ko *.mod.c  
