@@ -30,7 +30,7 @@ do_compile_append() {
 }
 do_install_append() {
 	install -d -m 0755 ${D}/lib64
-	ln -s -r ${D}/lib64/ld-linux-x86-64.so.2  ${D}/lib64/ld-linux-x86-64.so.2 
+	ln -s -r ${D}/lib/ld-linux-x86-64.so.2  ${D}/lib64/ld-linux-x86-64.so.2 
 	install -d -m 0755 ${D}/usr${base_libdir}
 	install -d -m 0755 ${D}/usr${base_bindir}
 	    install -m 0755 ${WORKDIR}/git/semautil ${D}/usr${base_bindir}/
