@@ -14,19 +14,22 @@ SRC_URI = "git://github.com/ADLINK/sema-linux.git;protocol=http \
 SRC_URI[md5sum] = "f3add5725dfc38e3c30357fecb43ff54"
 SRC_URI[sha256sum] = "1225bcf4b6d7f89e7fc9b26b70a81a47e843f8f22c1b9fd407352f5c92dc6306"
 
-SRC_URI_append ="file://Makefile"
+SRC_URI_append ="file://Makefile \
+		 file://binaries/linux64/bin/semautil \
+		 file://binaries/linux64/lib/libsema.so "
 
 S = "${WORKDIR}/git"
 
 do_compile_prepend() {
 	rm -r ${WORKDIR}/git/Makefile
 	cp ${WORKDIR}/Makefile ${WORKDIR}/git/Makefile
+	cp ${WORKDIR}/binaries/linux64/bin/semautil ${WORKDIR}/git/semautil
+	cp ${WORKDIR}/binaries/linux64/lib/libsema.so ${WORKDIR}/git/lib/libsema.so
 }
 
 do_compile_append() {
 	cd ${WORKDIR}/git
-	make semautil
-	make libsema.so
+
 }
 do_install_append() {
 	install -d -m 0755 ${D}/lib64
