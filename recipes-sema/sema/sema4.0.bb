@@ -7,37 +7,43 @@ LICENSE = "CLOSED"
 
 inherit module
 
-SRCREV = "c094066cc6f69bdc21ec5b2bb8bdae805586c16f"
+SRCREV = "e1057c92aa1a277c94230ae2e26afed2faa2a0b4"
 SRC_URI = "git://github.com/ADLINK/sema-linux.git;protocol=http \
            "
 
-SRC_URI[md5sum] = "f3add5725dfc38e3c30357fecb43ff54"
-SRC_URI[sha256sum] = "1225bcf4b6d7f89e7fc9b26b70a81a47e843f8f22c1b9fd407352f5c92dc6306"
-
-SRC_URI_append ="file://Makefile \
-		 file://binaries/linux64/bin/semautil \
-		 file://binaries/linux64/lib/libsema.so "
+SRC_URI_append ="file://Makefile"
 
 S = "${WORKDIR}/git"
+
+CFLAGS_prepend += "-I${WORKDIR}/git/lib"
 
 do_compile_prepend() {
 	rm -r ${WORKDIR}/git/Makefile
 	cp ${WORKDIR}/Makefile ${WORKDIR}/git/Makefile
-	cp ${WORKDIR}/binaries/linux64/bin/semautil ${WORKDIR}/git/semautil
-	cp ${WORKDIR}/binaries/linux64/lib/libsema.so ${WORKDIR}/git/lib/libsema.so
 }
 
 do_compile_append() {
 	cd ${WORKDIR}/git
-
+	${CC}${CFLAGS}${LDFLAGS} -shared -fPIC -Wl,-soname,libsema.so ${WORKDIR}/git/lib/backlight.c \
+	${WORKDIR}/git/lib/common.c \
+	${WORKDIR}/git/lib/boardinfo.c \
+	${WORKDIR}/git/lib/conv.c \
+	${WORKDIR}/git/lib/fan.c \
+	${WORKDIR}/git/lib/gpio.c \
+	${WORKDIR}/git/lib/i2c.c \
+	${WORKDIR}/git/lib/init.c \
+	${WORKDIR}/git/lib/storage.c \
+	${WORKDIR}/git/lib/watchdog.c -o ${WORKDIR}/git/lib/libsema.so
+  	${CC} ${CFLAGS} -Wall -L${WORKDIR}/git/lib/ ${WORKDIR}/git/app/main.c -lsema -o ${WORKDIR}/git/semautil 
 }
+
 do_install_append() {
 	install -d -m 0755 ${D}/lib64
 	ln -s -r ${D}/lib/ld-linux-x86-64.so.2  ${D}/lib64/ld-linux-x86-64.so.2 
 	install -d -m 0755 ${D}/usr${base_libdir}
 	install -d -m 0755 ${D}/usr${base_bindir}
-	    install -m 0755 ${WORKDIR}/git/semautil ${D}/usr${base_bindir}/
-	    install -m 0755 ${WORKDIR}/git/lib/libsema.so ${D}/usr${base_libdir}/
+	install -m 0755 ${WORKDIR}/git/semautil ${D}/usr${base_bindir}/
+	install -m 0755 ${WORKDIR}/git/lib/libsema.so ${D}/usr${base_libdir}/
 }
 
 
