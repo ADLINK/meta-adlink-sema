@@ -40,6 +40,19 @@ SRC_URI+="file://binaries/linux64/semagui"
 
 S = "${WORKDIR}"
 
+#--------------------------------------------------------------------------------------------------------------------------------
+# To exclude shared libraries installed within a recipe that should be ignored by the OpenEmbedded build system's shared library
+#   resolver.
+
+PRIVATE_LIBS = "libstdc++.so.6 \
+		libEApi_1.so.3 \
+		libgcc_s.so.1 \
+		libsema.so.3 \
+		libsemaeapi.so.3 \
+		libsema_hwlinux.so.1.7 \
+	       "
+#---------------------------------------------------------------------------------------------------------------------------------
+
 # Tasks
 do_install() {
 
