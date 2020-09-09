@@ -7,7 +7,7 @@ LICENSE = "CLOSED"
 
 inherit module
 
-SRCREV = "b4c63b1892742840eea44463152e14e41a8ecfe0"
+SRCREV = "302ea74a83789c5464d396c8dadc6eee7152e836"
 SRC_URI = "git://github.com/ADLINK/sema-linux.git;protocol=http \
            "
 
