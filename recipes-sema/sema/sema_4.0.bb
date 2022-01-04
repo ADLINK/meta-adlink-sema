@@ -49,9 +49,21 @@ do_install_append() {
 }
 
 
-FILES_${PN} += " /lib64 /usr${base_bindir}/semautil /usr${base_libdir}/*.so"
+FILES_${PN} += "/etc /lib64 /usr${base_bindir}/semautil /usr${base_libdir}/*.so"
 FILES_SOLIBSDEV = ""
 do_package_qa() {
 }
 
 INSANE_SKIP_${PN} = "already-stripped"
+
+KERNEL_MODULE_AUTOLOAD += "\
+adl-bmc \
+adl-bmc-bklight \
+adl-bmc-boardinfo \
+adl-bmc-i2c \
+adl-bmc-nvmem \
+adl-bmc-wdt \
+adl-bmc-hwmon \
+adl-bmc-vm \
+"
+
