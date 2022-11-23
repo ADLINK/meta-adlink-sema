@@ -1,4 +1,4 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/sema4.0:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/sema4.0:"
 
 SUMMARY = "SEMA Application"
 DESCRIPTION = "At the heart of SEMA is the Board Management Controller (BMC) supporting SEMA functions. The SEMA Extended EAPI  provides access to all functions and can be integrated into the user’s own applications. The SEMA GUI and SEMA Command Line Interface  allow monitoring, control and use of the SEMA parameters and functions directly on your device for test and  demonstration  purpose "
@@ -9,24 +9,24 @@ LICENSE = "CLOSED"
 
 inherit module
 
-SRCREV = "8fc4404d560e8f2e97d673ea10c3927330221c16"
-SRC_URI = "git://github.com/ADLINK/sema-linux.git;protocol=http \
+SRCREV = "48f5e4acf7360b4fc01e978f809c0c58ecbab55f"
+SRC_URI = "git://github.com/ADLINK/sema-linux.git;branch=sema-bmc;protocol=http \
            "
 
-SRC_URI_append ="file://Makefile"
+SRC_URI:append ="file://Makefile"
 
 S = "${WORKDIR}/git"
 
-CFLAGS_prepend += "-I${WORKDIR}/git/lib"
+CFLAGS:prepend = "-I${WORKDIR}/git/lib"
 
-do_compile_prepend() {
+do_compile:prepend() {
 	rm -r ${WORKDIR}/git/Makefile
 	cp ${WORKDIR}/Makefile ${WORKDIR}/git/Makefile
 }
 
-do_compile_append() {
+do_compile:append() {
 	cd ${WORKDIR}/git
-	${CC}${CFLAGS}${LDFLAGS} -shared -fPIC -Wl,-soname,libsema.so ${WORKDIR}/git/lib/backlight.c \
+	${CC} ${CFLAGS} ${LDFLAGS} -shared -fPIC -Wl,-soname,libsema.so ${WORKDIR}/git/lib/backlight.c \
 	${WORKDIR}/git/lib/common.c \
 	${WORKDIR}/git/lib/boardinfo.c \
 	${WORKDIR}/git/lib/conv.c \
@@ -39,7 +39,7 @@ do_compile_append() {
   	${CC} ${CFLAGS} -Wall -L${WORKDIR}/git/lib/ ${WORKDIR}/git/app/main.c -lsema -o ${WORKDIR}/git/semautil 
 }
 
-do_install_append() {
+do_install:append() {
 	install -d -m 0755 ${D}/lib64
 	ln -s -r ${D}/lib/ld-linux-x86-64.so.2  ${D}/lib64/ld-linux-x86-64.so.2 
 	install -d -m 0755 ${D}/usr${base_libdir}
@@ -49,7 +49,7 @@ do_install_append() {
 }
 
 
-FILES_${PN} += "/etc /lib64 /usr${base_bindir}/semautil /usr${base_libdir}/*.so"
+FILES:${PN} += "/etc /lib64 /usr${base_bindir}/semautil /usr${base_libdir}/*.so"
 FILES_SOLIBSDEV = ""
 do_package_qa() {
 }
