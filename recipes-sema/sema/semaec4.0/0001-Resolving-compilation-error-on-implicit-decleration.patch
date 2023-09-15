@@ -1,0 +1,24 @@
+From f13c4127bfa5b3997cb286ec4c0c3c0cad624ba1 Mon Sep 17 00:00:00 2001
+From: Dinesh V <dinesh.v@adlinktech.com>
+Date: Fri, 15 Sep 2023 17:03:44 +0530
+Subject: [PATCH] Resolving compilation error on implicit decleration
+
+---
+ driver/adl-ec-gpio.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/driver/adl-ec-gpio.c b/driver/adl-ec-gpio.c
+index 8351f10..ecb0493 100755
+--- a/driver/adl-ec-gpio.c
++++ b/driver/adl-ec-gpio.c
+@@ -5,6 +5,7 @@
+ #include <linux/platform_device.h>
+ #include <linux/fs.h>
+ #include <linux/module.h>
++#include <linux/uaccess.h>
+ #include "adl-ec.h"
+ 
+ #define ADL_BMC_OFS_GPIO_IN_PORT                 0x88
+-- 
+2.25.1
+

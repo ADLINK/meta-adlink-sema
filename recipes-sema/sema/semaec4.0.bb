@@ -9,12 +9,12 @@ LICENSE = "CLOSED"
 
 inherit module
 
-SRCBRANCH = "sema-ec"
-SRCREV = "0450280a1878bd2bffe98b36114a7e9fc8914802"
-SRC_URI = "git://github.com/ADLINK/sema-linux.git;branch=${SRCBRANCH};protocol=http \
-           "
+SRCREV = "rel_sema4_ec_1v0"
+SRC_URI = "git://github.com/ADLINK/sema-linux.git;tag=${SRCREV};nobranch=1;protocol=http "
 
-SRC_URI_append ="file://Makefile"
+
+SRC_URI_append ="file://Makefile \
+		  file://0001-Resolving-compilation-error-on-implicit-decleration.patch "
 
 S = "${WORKDIR}/git"
 

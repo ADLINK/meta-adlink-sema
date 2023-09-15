@@ -1,19 +1,19 @@
 SEMA_OBJS = $(patsubst %.c,%.o,$(wildcard lib/*.c))
 APP_OBJS = $(patsubst %.c,%.o,$(wildcard app/*.c))
-obj-m := driver/adl-bmc.o \
-         driver/adl-bmc-bklight.o \
-         driver/adl-bmc-wdt.o \
-         driver/adl-bmc-i2c.o \
-         driver/adl-bmc-boardinfo.o \
-         adl-bmc-nvmem-sec.o \
-         adl-bmc-nvmem.o \
-         driver/adl-bmc-vm.o \
-         driver/adl-bmc-hwmon.o \
-         driver/adl-bmc-i2c.o \
-         driver/adl-bmc-gpio.o
+obj-m := driver/adl-ec.o \
+         driver/adl-ec-bklight.o \
+         driver/adl-ec-wdt.o \
+         driver/adl-ec-i2c.o \
+         driver/adl-ec-boardinfo.o \
+         adl-ec-nvmem-sec.o \
+         adl-ec-nvmem.o \
+         driver/adl-ec-vm.o \
+         driver/adl-ec-hwmon.o \
+         driver/adl-ec-i2c.o \
+         driver/adl-ec-gpio.o
 
-adl-bmc-nvmem-sec-m := driver/adl-bmc-nvmem-sec.o driver/nvmem-common.o	 
-adl-bmc-nvmem-m := driver/adl-bmc-nvmem.o driver/nvmem-common.o	
+adl-ec-nvmem-sec-m := driver/adl-ec-nvmem-sec.o driver/nvmem-common.o	 
+adl-ec-nvmem-m := driver/adl-ec-nvmem.o driver/nvmem-common.o	
 
 
 all: modules
