@@ -27,7 +27,7 @@ do_compile_prepend() {
 
 do_compile_append() {
 	cd ${WORKDIR}/git
-	${CC}${CFLAGS}${LDFLAGS} -shared -fPIC -Wl,-soname,libsema.so ${WORKDIR}/git/lib/backlight.c \
+	${CC} ${CFLAGS} ${LDFLAGS} -shared -fPIC -Wl,-soname,libsema.so ${WORKDIR}/git/lib/backlight.c \
 	${WORKDIR}/git/lib/common.c \
 	${WORKDIR}/git/lib/boardinfo.c \
 	${WORKDIR}/git/lib/conv.c \
@@ -58,15 +58,15 @@ do_package_qa() {
 INSANE_SKIP_${PN} = "already-stripped"
 
 KERNEL_MODULE_AUTOLOAD += "\
-adl-bmc \
-adl-bmc-bklight \
-adl-bmc-boardinfo \
-adl-bmc-i2c \
-adl-bmc-nvmem \
-adl-bmc-wdt \
-adl-bmc-hwmon \
-adl-bmc-vm \
-adl-bmc-vmem-sec \
-adl-bmc-gpio \
+adl-ec \
+adl-ec-bklight \
+adl-ec-boardinfo \
+adl-ec-i2c \
+adl-ec-nvmem \
+adl-ec-wdt \
+adl-ec-hwmon \
+adl-ec-vm \
+adl-ec-vmem-sec \
+adl-ec-gpio \
 "
 
