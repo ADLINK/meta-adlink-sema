@@ -11,6 +11,7 @@ inherit module
 
 SRCREV = "rel_sema4_ec_1v0"
 SRC_URI = "git://github.com/ADLINK/sema-linux.git;tag=${SRCREV};nobranch=1;protocol=http "
+PV = "1.0+git${SRCPV}"
 
 
 SRC_URI_append ="file://Makefile \
