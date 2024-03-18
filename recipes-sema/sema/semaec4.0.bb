@@ -10,7 +10,7 @@ LICENSE = "CLOSED"
 inherit module
 
 SRCBRANCH = "sema-ec"
-SRCREV = "0450280a1878bd2bffe98b36114a7e9fc8914802"
+SRCREV = "904ff8d2723384ac17db79b4c657caf6c109b41a"
 SRC_URI = "git://github.com/ADLINK/sema-linux.git;branch=${SRCBRANCH};protocol=http \
            "
 
