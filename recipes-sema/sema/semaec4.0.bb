@@ -8,6 +8,7 @@ SECTION = "Applications"
 LICENSE = "CLOSED"
 
 inherit module
+DEPENDS += "  util-linux util-linux-libuuid"
 
 SRCBRANCH = "sema-ec"
 SRCREV = "904ff8d2723384ac17db79b4c657caf6c109b41a"
@@ -37,7 +38,7 @@ do_compile:append() {
 	${WORKDIR}/git/lib/init.c \
 	${WORKDIR}/git/lib/storage.c \
 	${WORKDIR}/git/lib/watchdog.c -o ${WORKDIR}/git/lib/libsema.so
-  	${CC} ${CFLAGS} -Wall -L${WORKDIR}/git/lib/ ${WORKDIR}/git/app/main.c -lsema -o ${WORKDIR}/git/semautil 
+  	${CC} ${CFLAGS} -Wall -L${WORKDIR}/git/lib/ ${WORKDIR}/git/app/main.c -lsema  -luuid  -o ${WORKDIR}/git/semautil 
 }
 
 do_install:append() {
@@ -67,6 +68,7 @@ adl-ec-wdt \
 adl-ec-hwmon \
 adl-ec-vm \
 adl-ec-vmem-sec \
+adl-ec-nvmem-sec \
 adl-ec-gpio \
 "
 
