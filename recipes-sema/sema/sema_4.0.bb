@@ -10,8 +10,8 @@ LICENSE = "CLOSED"
 inherit module
 DEPENDS += "  util-linux util-linux-libuuid"
 
-SRCREV = "b7b82c640c2ff46ded840afe8c7c26335d2b8bb1"
-SRC_URI = "git://github.com/ADLINK/sema-linux.git;branch=sema-bmc;protocol=http \
+SRCREV = "56c8107db0575987eaf9e2f03097fcd7937c79c0"
+SRC_URI = "git://github.com/ADLINK/sema-linux-bmc.git;branch=main;protocol=http \
            "
 
 SRC_URI:append ="file://Makefile \
