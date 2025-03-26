@@ -9,8 +9,8 @@ LICENSE = "CLOSED"
 
 inherit module
 
-SRCREV = "b0acc4c7ade3bec25b3bab833f8de221254b53f7"
-SRC_URI = "git://github.com/ADLINK/sema-linux.git;branch=sema-bmc;protocol=http \
+SRCREV = "1fff26c2e7d51e67e59e11b0f716fd2a3c30feb7"
+SRC_URI = "git://github.com/ADLINK/sema-linux-bmc.git;branch=main;protocol=http \
            "
 
 SRC_URI:append ="file://Makefile"
