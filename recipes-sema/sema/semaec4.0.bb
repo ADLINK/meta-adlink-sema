@@ -11,8 +11,8 @@ inherit module
 DEPENDS += "  util-linux util-linux-libuuid"
 
 SRCBRANCH = "sema-ec"
-SRCREV = "43bea9593a6147536f935a92b1b08a87d7ed486f"
-SRC_URI = "git://github.com/ADLINK/sema-linux.git;branch=${SRCBRANCH};protocol=http \
+SRCREV = "4c1db73a53c6dac7ff5a73a3f674c87100c846b7"
+SRC_URI = "git://github.com/ADLINK/sema-linux-ec.git;branch=${SRCBRANCH};protocol=http \
            "
 
 SRC_URI:append = " file://Makefile"
