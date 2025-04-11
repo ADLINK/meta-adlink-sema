@@ -13,9 +13,7 @@ SRCREV = "1fff26c2e7d51e67e59e11b0f716fd2a3c30feb7"
 SRC_URI = "git://github.com/ADLINK/sema-linux-bmc.git;branch=main;protocol=http \
            "
 
-SRC_URI:append ="file://Makefile \
-  file://0001-i2c-driver-remove-proto-change.patch \
-"
+SRC_URI:append ="file://Makefile"
 
 S = "${WORKDIR}/git"
 
