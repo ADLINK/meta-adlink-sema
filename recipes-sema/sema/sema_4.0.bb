@@ -10,7 +10,7 @@ LICENSE = "CLOSED"
 inherit module
 DEPENDS += "  util-linux util-linux-libuuid"
 
-SRCREV = "56c8107db0575987eaf9e2f03097fcd7937c79c0"
+SRCREV = "7418764723e931eb2982131b2dfb8e55cdff76e1"
 SRC_URI = "git://github.com/ADLINK/sema-linux-bmc.git;branch=main;protocol=http \
            "
 
