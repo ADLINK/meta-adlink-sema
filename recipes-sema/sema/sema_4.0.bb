@@ -1,57 +1,52 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/sema4.0:"
 
 SUMMARY = "SEMA Application"
-DESCRIPTION = "At the heart of SEMA is the Board Management Controller (BMC) supporting SEMA functions. The SEMA Extended EAPI  provides access to all functions and can be integrated into the user’s own applications. The SEMA GUI and SEMA Command Line Interface  allow monitoring, control and use of the SEMA parameters and functions directly on your device for test and  demonstration  purpose "
+DESCRIPTION = "At the heart of SEMA is the Board Management Controller (BMC) supporting SEMA functions. The SEMA Extended EAPI provides access to all functions and can be integrated into the user's own applications. The SEMA GUI and SEMA Command Line Interface allow monitoring, control and use of the SEMA parameters and functions directly on your device for test and demonstration purpose"
 HOMEPAGE = "https://www.adlinktech.com/en/SEMA.aspx"
 SECTION = "Applications"
 
 LICENSE = "CLOSED"
 
 inherit module
-DEPENDS += "  util-linux util-linux-libuuid"
+DEPENDS += "util-linux util-linux-libuuid"
 
-SRCREV = "7418764723e931eb2982131b2dfb8e55cdff76e1"
+SRCREV = "81d391725d072fa72a8b2e63b23e4f103c13945e"
 SRC_URI = "git://github.com/ADLINK/sema-linux-bmc.git;branch=main;protocol=http \
-           "
-
-SRC_URI:append ="file://Makefile \
+           file://Makefile \
 "
 
-S = "${WORKDIR}/git"
 
-CFLAGS:prepend = "-I${WORKDIR}/git/lib"
+CFLAGS:prepend = "-I${S}/lib "
 
 do_compile:prepend() {
-	rm -r ${WORKDIR}/git/Makefile
-	cp ${WORKDIR}/Makefile ${WORKDIR}/git/Makefile
+	rm -f ${S}/Makefile
+	cp ${UNPACKDIR}/Makefile ${S}/Makefile
 }
 
 do_compile:append() {
-	cd ${WORKDIR}/git
-	${CC} ${CFLAGS} ${LDFLAGS} -shared -fPIC -Wl,-soname,libsema.so ${WORKDIR}/git/lib/backlight.c \
-	${WORKDIR}/git/lib/common.c \
-	${WORKDIR}/git/lib/boardinfo.c \
-	${WORKDIR}/git/lib/conv.c \
-	${WORKDIR}/git/lib/fan.c \
-	${WORKDIR}/git/lib/gpio.c \
-	${WORKDIR}/git/lib/i2c.c \
-	${WORKDIR}/git/lib/init.c \
-	${WORKDIR}/git/lib/storage.c \
-	${WORKDIR}/git/lib/watchdog.c -o ${WORKDIR}/git/lib/libsema.so
-  	${CC} ${CFLAGS} -Wall -L${WORKDIR}/git/lib/ ${WORKDIR}/git/app/main.c -lsema -luuid -o ${WORKDIR}/git/semautil 
+	cd ${S}
+	${CC} ${CFLAGS} ${LDFLAGS} -shared -fPIC -Wl,-soname,libsema.so \
+		${S}/lib/backlight.c \
+		${S}/lib/common.c \
+		${S}/lib/boardinfo.c \
+		${S}/lib/conv.c \
+		${S}/lib/fan.c \
+		${S}/lib/gpio.c \
+		${S}/lib/i2c.c \
+		${S}/lib/init.c \
+		${S}/lib/storage.c \
+		${S}/lib/watchdog.c -o ${S}/lib/libsema.so
+	${CC} ${CFLAGS} -Wall -L${S}/lib/ ${S}/app/main.c -lsema -luuid -o ${S}/semautil
 }
 
 do_install:append() {
-	install -d -m 0755 ${D}/lib64
-	ln -s -r ${D}/lib/ld-linux-x86-64.so.2  ${D}/lib64/ld-linux-x86-64.so.2 
 	install -d -m 0755 ${D}${base_libdir}
 	install -d -m 0755 ${D}${base_bindir}
-	install -m 0755 ${WORKDIR}/git/semautil ${D}${base_bindir}/
-	install -m 0755 ${WORKDIR}/git/lib/libsema.so ${D}${base_libdir}/
+	install -m 0755 ${S}/semautil ${D}${base_bindir}/
+	install -m 0755 ${S}/lib/libsema.so ${D}${base_libdir}/
 }
 
-
-FILES:${PN} += "/etc /lib64 ${base_bindir}/semautil ${base_libdir}/*.so"
+FILES:${PN} += "/etc ${base_bindir}/semautil ${base_libdir}/*.so"
 FILES_SOLIBSDEV = ""
 do_package_qa() {
 }
@@ -68,4 +63,3 @@ adl-bmc-wdt \
 adl-bmc-hwmon \
 adl-bmc-vm \
 "
-
